@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import api from "../services/api";
 
 function MovieDetails() {
@@ -51,6 +51,10 @@ function MovieDetails() {
           <li key={index}>{actor}</li>
         ))}
       </ul>
+
+      <Link to={`/book-ticket/${movie.id}`} className="book-btn">
+        🎟 Book Ticket
+      </Link>
     </div>
   );
 }

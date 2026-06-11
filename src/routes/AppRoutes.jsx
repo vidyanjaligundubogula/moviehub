@@ -9,6 +9,9 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Logout from "../pages/Logout";
 import Favorites from "../pages/Favorites";
+import BookTicket from "../pages/BookTicket";
+import MyBookings from "../pages/MyBookings";
+
 import ProtectedRoute from "./ProtectedRoute";
 
 function AppRoutes() {
@@ -39,6 +42,24 @@ function AppRoutes() {
       />
 
       <Route path="/favorites" element={<Favorites />} />
+
+      <Route
+        path="/book-ticket/:id"
+        element={
+          <ProtectedRoute>
+            <BookTicket />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/my-bookings"
+        element={
+          <ProtectedRoute>
+            <MyBookings />
+          </ProtectedRoute>
+        }
+      />
 
       <Route path="/register" element={<Register />} />
 

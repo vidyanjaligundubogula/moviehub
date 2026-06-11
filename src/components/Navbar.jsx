@@ -13,35 +13,23 @@ function Navbar() {
 
       <Link to="/">Home</Link>
 
-      <Link to="/movies">
-        Movies
-      </Link>
+      <Link to="/movies">Movies</Link>
 
-      <Link to="/favorites">
-        Favorites ({favorites.length})
-      </Link>
+      <Link to="/favorites">Favorites ({favorites.length})</Link>
+
+      {user && <Link to="/my-bookings">My Bookings</Link>}
 
       {!user && (
         <>
-          <Link to="/register">
-            Register
-          </Link>
-
-          <Link to="/login">
-            Login
-          </Link>
+          <Link to="/register">Register</Link>
+          <Link to="/login">Login</Link>
         </>
       )}
 
       {user && (
         <>
-          <span className="welcome-user">
-            Hi, {user.name}
-          </span>
-
-          <Link to="/logout">
-            Logout
-          </Link>
+          <span className="welcome-user">Hi, {user.name}</span>
+          <Link to="/logout">Logout</Link>
         </>
       )}
     </nav>
